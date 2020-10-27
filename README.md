@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
  ```
  npm run build 
- npm run tsc
+ npm run build:tsc
  npm run server
  ```
 

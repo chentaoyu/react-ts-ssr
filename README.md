@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to run SSR 
+
+ ```
+ npm run build 
+ npm run tsc
+ npm run server
+ ```
+
 ## Available Scripts
 
 In the project directory, you can run:

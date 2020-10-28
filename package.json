@@ -33,9 +33,7 @@
     "build": "react-scripts build && tsc -p tsconfig.server.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "rar:build": "react-app-rewired build",
     "server": "nodemon --exec babel-node server/index.js",
-    "start:server": "react-scripts build --config webpack.config.js"
   },
   "eslintConfig": {
     "extends": [

@@ -1,13 +1,11 @@
-import path from 'path';
 import fs from 'fs';
-
+import path from 'path';
 import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-
 import { StaticRouter } from 'react-router-dom';
-
-import * as App from '../lib/App.js'
+// import * as App from '../lib/App.js'
+import Routes from '../src/routers/index';
 
 const PORT = 8080
 const app = express()
@@ -20,12 +18,14 @@ app.use(express.static(PUBLIC_DIR));
 
 // ...other imports and Express config
 
-app.get('/*', (req, res) => {
+app.use((req, res) => {
   const context = {};
+  console.log(req.url);
   const app = ReactDOMServer.renderToString(
     // React.createElement(StaticRouter, { location: { url: req.url }, context: { context } },App)
     <StaticRouter location={req.url} context={context}>
-      <App />
+      {/* <App /> */}
+      <Routes />
     </StaticRouter>
   );
 

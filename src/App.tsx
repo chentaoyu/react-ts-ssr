@@ -3,7 +3,6 @@ import {
   Link
 } from "react-router-dom";
 
-import Routes from './routers';
 import './App.css';
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
           <Link to="/topics">Topics</Link>
         </li>
       </ul>
-      <Routes />
     </div>
   );
 }

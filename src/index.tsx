@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {
-  BrowserRouter as Router
+  BrowserRouter
 } from "react-router-dom";
+import Routes from './routers';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <Router>
+ReactDOM.hydrate(
+  <BrowserRouter>
     <App />
-  </Router>,
+    <Routes />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

@@ -3,5 +3,18 @@
     "@babel/preset-env",
     "@babel/preset-react",
     "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-modules-commonjs",
+    [
+      "transform-assets",
+      {
+        "extensions": [
+          "css"
+        ],
+        "name": "static/media/[name].[hash:8].[ext]"
+      }
+    ],
+    "dynamic-import-node"
   ]
 }

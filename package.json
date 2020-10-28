@@ -17,6 +17,8 @@
     "@types/react-dom": "^16.9.8",
     "antd": "^4.7.3",
     "babel-node": "0.0.1-security",
+    "babel-plugin-react-css-modules": "^5.2.6",
+    "babel-plugin-transform-assets": "^1.0.2",
     "express": "^4.17.1",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
@@ -28,10 +30,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && tsc -p tsconfig.server.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:tsc": "tsc -p tsconfig.server.json",
+    "rar:build": "react-app-rewired build",
     "server": "nodemon --exec babel-node server/index.js",
     "start:server": "react-scripts build --config webpack.config.js"
   },
@@ -60,8 +62,6 @@
     "@babel/register": "^7.12.1",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/webpack-plugin": "^5.14.0",
-    "@types/react-router-dom": "^5.1.6",
-    "css-loader": "^5.0.0",
-    "style-loader": "^2.0.0"
+    "@types/react-router-dom": "^5.1.6"
   }
 }

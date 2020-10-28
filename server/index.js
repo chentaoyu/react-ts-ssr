@@ -7,12 +7,14 @@ import ReactDOMServer from 'react-dom/server';
 
 import { StaticRouter } from 'react-router-dom';
 
-import App from '../lib/App.js'
+import * as App from '../lib/App.js'
 
 const PORT = 8080
 const app = express()
-app.use(express.static('./build'));
-// app.use(express.static('./lib'));
+// app.use(express.static('./build'));
+var { BUILD_DIR, PUBLIC_DIR } = require('./paths');
+app.use(express.static(BUILD_DIR));
+app.use(express.static(PUBLIC_DIR));
 
 // const router = express.Router()
 
@@ -27,7 +29,7 @@ app.get('/*', (req, res) => {
     </StaticRouter>
   );
 
-  const indexFile = path.resolve('./build/index.html');
+  const indexFile = path.resolve(path.join(BUILD_DIR, 'index.html'));
   fs.readFile(indexFile, 'utf8', (err, data) => {
     if (err) {
       console.error('Something went wrong:', err);

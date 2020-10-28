@@ -32,9 +32,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && tsc -p tsconfig.server.build.json",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "ts:build": " tsc -p tsconfig.server.build.json",
     "server": "ts-node --project tsconfig.server.json server/index.tsx"
   },
   "eslintConfig": {
